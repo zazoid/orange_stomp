@@ -6,3 +6,11 @@ Look at this ansible playbook, at least you need dbus config from there, also yo
 hardware pull up resistor is strongly(!) recommended, if you know why software-configurable pull up leaves input unstable even on short lines - please contact me
 
 audio interface used in my setup is emu 0202 usb
+
+Requirements
+
+are dynamically updating see your STDERR
+
+Installation
+
+Just copy files to proper places lol
