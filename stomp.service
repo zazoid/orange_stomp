@@ -1,0 +1,11 @@
+[Unit]
+Description=Run dist for vocal processor
+
+[Service]
+LimitRTPRIO=infinity
+LimitMEMLOCK=infinity
+ExecStart=/usr/bin/stomp
+User=root
+
+[Install]
+WantedBy=multi-user.target

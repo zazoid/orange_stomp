@@ -1,0 +1,13 @@
+[Unit]
+Description=do wiring
+Wants=dist.service jackd.service chorus.service guitarix.service
+After=dist.service jackd.service chorus.service guitarix.service
+
+[Service]
+LimitRTPRIO=infinity
+LimitMEMLOCK=infinity
+ExecStart=/usr/bin/jack_connect_everyting
+User=user
+
+[Install]
+WantedBy=multi-user.target

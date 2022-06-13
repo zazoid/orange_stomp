@@ -1,0 +1,12 @@
+#!/bin/sh
+
+sleep 40
+/usr/bin/jack_connect system:capture_1 GxMultiBandDistortion:in
+/usr/bin/jack_connect GxMultiBandDistortion:out GxChorus-Stereo:in
+/usr/bin/jack_connect GxMultiBandDistortion:out GxChorus-Stereo:in1
+/usr/bin/jack_connect GxChorus-Stereo:out system:playback_1
+/usr/bin/jack_connect GxChorus-Stereo:out1 system:playback_2
+/usr/bin/jack_connect system:capture_2 gx_head_amp:in_0
+/usr/bin/jack_connect gx_head_amp:out_0 gx_head_fx:in_0
+/usr/bin/jack_connect gx_head_fx:out_0 system:playback_1
+/usr/bin/jack_connect gx_head_fx:out_1 system:playback_2

@@ -1,0 +1,18 @@
+[Unit]
+Description=Run jackd
+
+[Service]
+LimitRTPRIO=infinity
+LimitMEMLOCK=infinity
+ExecStart=/usr/bin/jackd -a e -d alsa -r 48000 -p 256 -C hw:1,0 -P hw:1,0
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/dbus/system_bus_socket
+User=user
+
+# Wait for startup, then connect capture_1 to left/right playback,
+# for (downmixed-to-mono) practice input
+#ExecStartPost=/bin/sleep 5
+#ExecStartPost=/usr/bin/jack_connect system:capture_1 system:playback_1
+#ExecStartPost=/usr/bin/jack_connect system:capture_1 system:playback_2
+
+[Install]
+WantedBy=multi-user.target

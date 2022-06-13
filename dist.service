@@ -1,0 +1,11 @@
+[Unit]
+Description=Run dist for vocal processor
+
+[Service]
+LimitRTPRIO=infinity
+LimitMEMLOCK=infinity
+ExecStart=jalv -i -c DRIVE3=0.40 -c DRIVE4=0.30 -c GAIN=-10.39 http://guitarix.sourceforge.net/plugins/gx_mbdistortion_#_mbdistortion_
+User=user
+
+[Install]
+WantedBy=multi-user.target

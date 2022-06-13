@@ -1,0 +1,14 @@
+[Unit]
+Description=Run chorus for vocal processor
+
+[Service]
+LimitRTPRIO=infinity
+LimitMEMLOCK=infinity
+ExecStart=jalv -i -c level=0.86 'http://guitarix.sourceforge.net/plugins/gx_chorus_stereo#_chorus_stereo'
+User=user
+
+
+
+
+[Install]
+WantedBy=multi-user.target
